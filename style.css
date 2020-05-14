@@ -1,0 +1,51 @@
+.container{
+  background: cyan;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox{
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 2px;
+  min-width: 40vw;
+  
+  background: pink;
+  padding: 20px;
+  box-sizing: border-box;
+  
+}
+
+li{
+ list-style: none; 
+  
+}
+.cb{
+  box-sizing: border-box;
+  border: 1px solid black;
+  
+  grid-column-gap:50px;
+  
+  text-align:center;
+  
+ 
+  
+}
+.cb:hover{
+  border:1px solid rgb(20,20,200,0.3);
+  cursor: pointer;
+}
+
+.h{
+  background-color:lightgreen;
+  border:1px solid rgb(20,20,200,0.3);
+
+}
+
+
+
