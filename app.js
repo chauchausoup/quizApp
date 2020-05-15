@@ -31,6 +31,7 @@ fetch('./data.json')
       var num =1;
 
       var flag = 1;
+      var res=0;
 
       document.querySelector(".checkbox").style.display = "none";
       button.innerHTML = "";
@@ -50,9 +51,14 @@ fetch('./data.json')
           this.classList.add("h");
           var optionSelected = Array.from(this.childNodes)
 
-         console.log(optionSelected[5].textContent);
+  
+         if(json[num-1].correctOption === optionSelected[3].textContent){
+            res++;
+         }
 
-         console.log(json[num-1].correctOption)
+
+         
+
           flag = 0;
           num++;
           return;
@@ -99,6 +105,7 @@ fetch('./data.json')
               document.getElementById("loader").style.display = "none";
 
               document.getElementById("myDiv").style.display = "block";
+              document.getElementById('h2').innerHTML=res;
             }
           }
         } else  {
