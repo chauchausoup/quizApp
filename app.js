@@ -1,6 +1,8 @@
 
       
       // lets start with this sample JSON data
+
+
 fetch('./data.json')
   .then((response)=>response.json())
   .then(data=>json=data)
@@ -26,8 +28,17 @@ fetch('./data.json')
       newResultBtn.innerHTML = "Show Result";
 
       var number = 1;
+      var num =1;
 
       var flag = 1;
+
+      document.querySelector(".checkbox").style.display = "none";
+      button.innerHTML = "";
+      var homeBtn = document.createElement("BUTTON");
+      homeBtn.innerHTML = "Go";
+      button.append(homeBtn);
+      homeBtn.addEventListener('click',showNext)
+      
 
 
       function go() {
@@ -37,8 +48,13 @@ fetch('./data.json')
       function boxHighlighter() {
         if (!this.classList.contains("h") && flag === 1) {
           this.classList.add("h");
-          console.log(this.innerHTML);
+          var optionSelected = Array.from(this.childNodes)
+
+         console.log(optionSelected[5].textContent);
+
+         console.log(json[num-1].correctOption)
           flag = 0;
+          num++;
           return;
         }
         if (this.classList.contains("h") && flag === 0) {
@@ -55,9 +71,9 @@ fetch('./data.json')
           document.querySelector(".checkbox").style.display = "none";
 
           button.append(newBtn);
-          button.append(newResultBtn);
-
           newBtn.addEventListener("click", goHome);
+          
+          button.append(newResultBtn);
           newResultBtn.addEventListener("click", showResult);
 
           function goHome() {
@@ -84,6 +100,7 @@ fetch('./data.json')
         } else if (number === 1) {
           var i = 0;
           var j = 0;
+          document.querySelector(".checkbox").style.display = "block";
 
           qNumber.innerHTML = number;
           qOne.innerHTML = json[number - 1].question;
@@ -99,6 +116,7 @@ fetch('./data.json')
         } else if (number === 2) {
           var i = 0;
           var j = 0;
+          document.querySelector(".checkbox").style.display = "block";
 
           qNumber.innerHTML = number;
           qOne.innerHTML = json[number - 1].question;
