@@ -30,7 +30,32 @@
     </ul>
   </div>
 
-  <script></script>
+  <script>
+
+    const box = document.querySelectorAll('.cb');
+    //console.log(box);
+
+   var flag = 1;
+
+    function highlighter(){
+      if (!this.classList.contains('h') && flag===1){
+        this.classList.add('h');
+        flag=0;
+        return;
+      }
+      if (this.classList.contains('h') && flag===0){
+        this.classList.remove('h');
+        flag=1;
+        return;
+        
+      }
+    }
+
+
+    box.forEach(b=>b.addEventListener('click',highlighter));
+
+
+  </script>
 </body>
 
 </html>
