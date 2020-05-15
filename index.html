@@ -11,6 +11,12 @@
 
 <body>
   <div class="container">
+
+    <div class="question">
+      <span class="qNumber">1</span>
+      <p class="qOne">What is the current Version of this Program?</p>
+    </div>
+
     <ul class="checkbox">
       <li class="checkBox1 cb">
         version original 3.0
@@ -28,6 +34,9 @@
        branch
       </li>
     </ul>
+    <div class="button">
+      <input type="button" value="Next">
+    </div>
   </div>
 
   <script>
@@ -37,7 +46,7 @@
 
    var flag = 1;
 
-    function highlighter(){
+    function boxHighlighter(){
       if (!this.classList.contains('h') && flag===1){
         this.classList.add('h');
         flag=0;
@@ -52,7 +61,10 @@
     }
 
 
-    box.forEach(b=>b.addEventListener('click',highlighter));
+
+
+
+    box.forEach(b=>b.addEventListener('click',boxHighlighter));
 
 
   </script>

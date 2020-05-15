@@ -6,6 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  border:2px solid red;
 }
 
 .checkbox {
@@ -13,6 +15,7 @@
   grid-template-columns: 1fr;
   grid-row-gap: 2px;
   min-width: 40vw;
+  border:2px solid red;
 
   background: pink;
   padding: 20px;
