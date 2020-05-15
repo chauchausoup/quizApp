@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckBox</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CheckBox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <div class="container">
+      <div class="question">
+        <span class="qNumber"></span>
+        <p class="qOne"></p>
+      </div>
 
-<body>
-  <div class="container">
-    <ul class="checkbox">
-      <li class="checkBox1 cb">
-        Hey
-      </li>
-      <li class="checkBox2 cb">
-        version 3.0
-      </li>
-      <li class="checkBox3 cb">
-        version 2.0
-      </li>
-      <li class="checkBox4 cb">
-        branch 2
-      </li>
-      <li class="checkBox5 cb">
-       branch
-      </li>
-    </ul>
-  </div>
+      <ul class="checkbox">
+        <li class="checkBox1 cb">
+          <span class="pNO"></span>.<span class="sNo"></span>
+          <span class="optionValue cb1"></span>
+        </li>
+        <li class="checkBox2 cb">
+          <span class="pNO"></span>.<span class="sNo"></span>
+          <span class="optionValue cb2"></span>
+        </li>
+        <li class="checkBox3 cb">
+          <span class="pNO"></span>.<span class="sNo"></span>
+          <span class="optionValue cb3"></span>
+        </li>
+        <li class="checkBox4 cb">
+          <span class="pNO"></span>.<span class="sNo"></span>
+          <span class="optionValue cb4"></span>
+        </li>
+        <li class="checkBox5 cb">
+          <span class="pNO"></span>.<span class="sNo"></span>
+          <span class="optionValue cb5"></span>
+        </li>
+      </ul>
+      <div class="button">
+        <input type="button" value="Next" />
+      </div>
+    </div>
 
-  <script></script>
-</body>
+    <div style="display: none;" id="loader"></div>
 
+    <div style="display: none;" id="myDiv" class="animate-bottom">
+      <h2 id="h2" style="font-size: 25;"></h2>
+      <p>Click below to play again!</p>
+      <button onclick="go()">Go Home</button>
+    </div>
+
+    <script src="app.js"/>
+
+   
+  </body>
 </html>
