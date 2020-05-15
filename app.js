@@ -64,8 +64,12 @@ fetch('./data.json')
         }
       }
 
+
+      // lets make a showNext app engine
+
+
       function showNext() {
-        if (number === 3) {
+        if (number === json.length+1) {
           question.innerHTML = "Over!!!";
           button.innerHTML = "";
           document.querySelector(".checkbox").style.display = "none";
@@ -97,7 +101,7 @@ fetch('./data.json')
               document.getElementById("myDiv").style.display = "block";
             }
           }
-        } else if (number === 1) {
+        } else  {
           var i = 0;
           var j = 0;
           document.querySelector(".checkbox").style.display = "block";
@@ -112,22 +116,7 @@ fetch('./data.json')
           optionValue.forEach((p) => {
             p.innerHTML = json[number - 1].options[i].option;
             i++;
-          });
-        } else if (number === 2) {
-          var i = 0;
-          var j = 0;
-          document.querySelector(".checkbox").style.display = "block";
-
-          qNumber.innerHTML = number;
-          qOne.innerHTML = json[number - 1].question;
-          pNo.forEach((p) => (p.innerHTML = number));
-          sNo.forEach((p) => {
-            p.innerHTML = json[number - 1].options[j].number;
-            j++;
-          });
-          optionValue.forEach((p) => {
-            p.innerHTML = json[number - 1].options[i].option;
-            i++;
+            return;
           });
         }
 
