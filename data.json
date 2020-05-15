@@ -1,0 +1,54 @@
+[
+  {
+    "question": "What is your name?",
+    "options": [
+      {
+        "number": "1",
+        "option": "Krishna"
+      },
+      {
+        "number": "2",
+        "option": "Nanda"
+      },
+      {
+        "number": "3",
+        "option": "Shesh"
+      },
+      {
+        "number": "4",
+        "option": "Tulsi"
+      },
+      {
+        "number": "5",
+        "option": "Puspha"
+      }
+    ],
+    "correctOption": "1"
+  },
+  {
+    "question": "Where is your Home?",
+    "options": [
+      {
+        "number": "1",
+        "option": "Pokhara"
+      },
+      {
+        "number": "2",
+        "option": "Europe"
+      },
+      {
+        "number": "3",
+        "option": "Asia"
+      },
+      {
+        "number": "4",
+        "option": "World"
+      },
+      {
+        "number": "5",
+        "option": "Universe"
+      }
+    ],
+    "correctOption": "4"
+  }
+]

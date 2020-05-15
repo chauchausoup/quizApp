@@ -18,23 +18,23 @@
       <ul class="checkbox">
         <li class="checkBox1 cb">
           <span class="pNO"></span>.<span class="sNo"></span>
-          <span class="te cb1"></span>
+          <span class="optionValue cb1"></span>
         </li>
         <li class="checkBox2 cb">
           <span class="pNO"></span>.<span class="sNo"></span
-          ><span class="te cb2"></span>
+          ><span class="optionValue cb2"></span>
         </li>
         <li class="checkBox3 cb">
           <span class="pNO"></span>.<span class="sNo"></span>
-          <span class="te cb3"></span>
+          <span class="optionValue cb3"></span>
         </li>
         <li class="checkBox4 cb">
           <span class="pNO"></span>.<span class="sNo"></span
-          ><span class="te cb4"></span>
+          ><span class="optionValue cb4"></span>
         </li>
         <li class="checkBox5 cb">
           <span class="pNO"></span>.<span class="sNo"></span>
-          <span class="te cb5"></span>
+          <span class="optionValue cb5"></span>
         </li>
       </ul>
       <div class="button">
@@ -50,179 +50,8 @@
       <button onclick="go()">Go Home</button>
     </div>
 
-    <script>
-      function go() {
-        location.reload();
-      }
+    <script src="app.js"/>
 
-      // lets start with this sample JSON data
-
-      var json = [
-        {
-          question: "What is your name?",
-          options: [
-            {
-              number: "1",
-              option: "Krishna",
-            },
-            {
-              number: "2",
-              option: "Nanda",
-            },
-            {
-              number: "3",
-              option: "Shesh",
-            },
-            {
-              number: "4",
-              option: "Tulsi",
-            },
-            {
-              number: "5",
-              option: "Puspha",
-            },
-          ],
-          correctOption: "1",
-        },
-        {
-          question: "Where is your Home?",
-          options: [
-            {
-              number: "1",
-              option: "Pokhara",
-            },
-            {
-              number: "2",
-              option: "Europe",
-            },
-            {
-              number: "3",
-              option: "Asia",
-            },
-            {
-              number: "4",
-              option: "World",
-            },
-            {
-              number: "5",
-              option: "Universe",
-            },
-          ],
-          correctOption: "4",
-        },
-      ];
-
-      // lets start scripting
-
-      var box = document.querySelectorAll(".cb");
-      var next = document.querySelector('.button input[type="button"]');
-      var qNumber = document.querySelector(".qNumber");
-      var qOne = document.querySelector(".qOne");
-      var te = document.querySelectorAll(".te");
-      var pNo = document.querySelectorAll(".pNO");
-      var sNo = document.querySelectorAll(".sNo");
-
-      var question = document.querySelector(".question");
-      var button = document.querySelector(".button");
-      var span = document.getElementsByTagName("span");
-
-      var newBtn = document.createElement("BUTTON");
-      newBtn.innerHTML = "Go Home";
-
-      var newResultBtn = document.createElement("BUTTON");
-      newResultBtn.innerHTML = "Show Result";
-
-      var number = 1;
-
-      var flag = 1;
-
-      function boxHighlighter() {
-        if (!this.classList.contains("h") && flag === 1) {
-          this.classList.add("h");
-          console.log(this.innerHTML);
-          flag = 0;
-          return;
-        }
-        if (this.classList.contains("h") && flag === 0) {
-          this.classList.remove("h");
-          flag = 1;
-          return;
-        }
-      }
-
-      function showNext() {
-        if (number === 3) {
-          question.innerHTML = "Over!!!";
-          button.innerHTML = "";
-          document.querySelector(".checkbox").style.display = "none";
-
-          button.append(newBtn);
-          button.append(newResultBtn);
-
-          newBtn.addEventListener("click", goHome);
-          newResultBtn.addEventListener("click", showResult);
-
-          function goHome() {
-            console.log("go home");
-
-            location.reload();
-          }
-
-          function showResult() {
-            var myVar = setTimeout(showLoader, 0);
-            var myVar2 = setTimeout(showNum, 10000);
-
-            function showLoader() {
-              document.querySelector(".container").style.display = "none";
-
-              document.getElementById("loader").style.display = "block";
-            }
-            function showNum() {
-              document.getElementById("loader").style.display = "none";
-
-              document.getElementById("myDiv").style.display = "block";
-            }
-          }
-        } else if (number === 1) {
-          var i = 0;
-          var j = 0;
-
-          qNumber.innerHTML = number;
-          qOne.innerHTML = json[number - 1].question;
-          pNo.forEach((p) => (p.innerHTML = number));
-          sNo.forEach((p) => {
-            p.innerHTML = json[number - 1].options[j].number;
-            j++;
-          });
-          te.forEach((p) => {
-            p.innerHTML = json[number - 1].options[i].option;
-            i++;
-          });
-        } else if (number === 2) {
-          var i = 0;
-          var j = 0;
-
-          qNumber.innerHTML = number;
-          qOne.innerHTML = json[number - 1].question;
-          pNo.forEach((p) => (p.innerHTML = number));
-          sNo.forEach((p) => {
-            p.innerHTML = json[number - 1].options[j].number;
-            j++;
-          });
-          te.forEach((p) => {
-            p.innerHTML = json[number - 1].options[i].option;
-            i++;
-          });
-        }
-
-        qNumber.innerHTML = number;
-        number++;
-        return;
-      }
-
-      box.forEach((b) => b.addEventListener("click", boxHighlighter));
-
-      next.addEventListener("click", showNext);
-    </script>
+   
   </body>
 </html>
