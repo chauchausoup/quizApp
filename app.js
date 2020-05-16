@@ -26,13 +26,21 @@ var newBtn = document.createElement("BUTTON");
 var newResultBtn = document.createElement("BUTTON");
 var homeBtn = document.createElement("BUTTON");
 
+
+
+
+
+
+
+
 //some counters and flags
 
-var number = 1;
-//var num = 1;
+var number= 1;
+var number2=1;
+
 var flag = 1;
 var res = 0;
-var number2;
+
 
 var optionSelected;
 
@@ -49,8 +57,8 @@ button.append(homeBtn);
 
 
 box.forEach((b) => b.addEventListener("click", boxHighlighter));
-next.addEventListener("click", showNext);
-homeBtn.addEventListener("click", showNext);
+next.addEventListener("click", start);
+homeBtn.addEventListener("click",start);
 
 
 
@@ -65,26 +73,11 @@ function go(){
 
 function boxHighlighter() {
 
-  number2=qNumber.innerHTML ;
+
+  window.optionSelected = Array.from(this.childNodes);
 
   if (!this.classList.contains("h") && flag === 1) {
     this.classList.add("h");
-
-  
-   var optionSelected = Array.from(this.childNodes);
-
-      //claculate result after the next button is clicked
-    
-      
-
-      if (json[number2 - 1].correctOption === optionSelected[3].textContent) {
-        res++;
-        
-        console.log(res)
-        console.log(json[number2 - 1].correctOption)
-        console.log(optionSelected[3].textContent)
-        console.log(number2)
-      }
 
   
 
@@ -99,6 +92,10 @@ function boxHighlighter() {
     return;
   }
 }
+
+
+
+
 
 // lets make a showNext app engine
 
@@ -150,8 +147,8 @@ function showNext() {
 
     document.querySelector(".checkbox").style.display = "block";
 
-    qNumber.innerHTML = number;
-    number2=number;
+    //qNumber.innerHTML = number;
+   
     qOne.innerHTML = json[number - 1].question;
     pNo.forEach((p) => (p.innerHTML = number));
     sNo.forEach((p) => {
@@ -161,16 +158,50 @@ function showNext() {
     optionValue.forEach((p) => {
       p.innerHTML = json[number - 1].options[i].option;
       i++;
-      return;
+      
     });
-box.forEach((b) => console.log(b.classList));
-
-
   }
-
   qNumber.innerHTML = number;
+  
+  checkResult();
+console.log(number)
   number++;
-  return;
+console.log(number)
+  
 }
 
 
+//check result()
+
+function checkResult(){
+
+
+  console.log("hello");
+
+  
+    if (json[number2 - 1].correctOption === (window.optionSelected[3]).textContent) {
+      res++;
+      
+    
+    }
+    console.log(res)
+      
+    console.log(number2)
+  
+number2++;
+  return; 
+
+
+}
+
+
+//start the show
+
+function start(){
+
+
+
+  showNext();
+
+  
+}
