@@ -113,6 +113,7 @@ return;
 if (number ===json.length+1) {
 
   checkResult();
+  document.querySelector(".starter").style.display = "none";
 
     question.innerHTML = "Over!!!";
     button.innerHTML = "";
@@ -144,7 +145,9 @@ if (number ===json.length+1) {
       function showNum() {
         document.getElementById("loader").style.display = "none";
         document.getElementById("myDiv").style.display = "block";
-        document.getElementById("h2").innerHTML = res;
+        document.getElementById("h").innerHTML = window.result;
+        //console.log("page result:" , window.result);
+
       }
     }
   } else {
@@ -186,7 +189,11 @@ function checkResult() {
   }
 
 
-  console.log("OUTER result:" ,res);
+  window.result=res;
+
+  console.log("OUTER result:" ,window.result);
+
+
 
   number2++;
   return;
