@@ -110,7 +110,7 @@ return;
 
 
 }
-if (number ===5) {
+if (number ===json.length+1) {
 
   checkResult();
 
