@@ -37,7 +37,10 @@ var optionSelected;
 
 //at very first of loading
 document.querySelector(".container").style.display = "none";
-document.querySelector(".starter").style.display = "block";
+document.querySelector(".starter").style.display = "grid";
+document.querySelector(".checkbox").style.display = "none";
+
+
 
 //making changes to new buttons
 newBtn.innerHTML = "Go Home";
@@ -52,7 +55,7 @@ next.addEventListener("click", showNext);
 
 //home page button function
 function homepage() {
-  document.querySelector(".container").style.display = "block";
+  document.querySelector(".container").style.display = "grid";
   showNext();
 }
 
@@ -91,7 +94,9 @@ function showNext() {
 if(starter===1){
     var k = 0;
     var l = 0;
-    document.querySelector(".checkbox").style.display = "block";
+document.querySelector(".starter").style.display = "none";
+
+    document.querySelector(".checkbox").style.display = "grid";
     qOne.innerHTML = json[0].question;
     pNo.forEach((p) => (p.innerHTML = 1));
     sNo.forEach((p) => {
@@ -140,11 +145,11 @@ if (number ===json.length+1) {
 
       function showLoader() {
         document.querySelector(".container").style.display = "none";
-        document.getElementById("loader").style.display = "block";
+        document.getElementById("loader").style.display = "grid";
       }
       function showNum() {
         document.getElementById("loader").style.display = "none";
-        document.getElementById("myDiv").style.display = "block";
+        document.getElementById("myDiv").style.display = "grid";
         document.getElementById("h").innerHTML = window.result;
         //console.log("page result:" , window.result);
 
@@ -155,7 +160,7 @@ if (number ===json.length+1) {
     var j = 0;
     // document.querySelector(".checkbox").style.display = "none";
 
-    document.querySelector(".checkbox").style.display = "block";
+    document.querySelector(".checkbox").style.display = "grid";
 
     qNumber.innerHTML = number;
 

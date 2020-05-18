@@ -1,14 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+.starter{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ margin:38vh auto;
+  grid-gap: 20px;
+  
+}
+
+.button{
+  display: grid;
+  direction: column;
+  grid-gap: 20px;
+  margin: 20px;
+  
+}
+
+.question{
+  font-size: 30px;
+}
+
 .container {
   background: cyan;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border:2px solid red;
 }
+
 
 .checkbox {
   display: grid;
@@ -21,6 +47,9 @@
   padding: 20px;
   box-sizing: border-box;
 }
+
+
+
 
 li {
   list-style: none;
@@ -83,6 +112,10 @@ li {
 
 
 #myDiv {
-  display: none;
+  
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 40vh auto;
+  grid-gap: 20px;
 }
