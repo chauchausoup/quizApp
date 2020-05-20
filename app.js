@@ -29,18 +29,16 @@ var newResultBtn = document.createElement("BUTTON");
 
 var number = 2;
 var number2 = 1;
-var starter=1;
+var starter = 1;
 var flag = 1;
 var res = 0;
-var resultArray=[];
+var resultArray = [];
 var optionSelected;
 
 //at very first of loading
 document.querySelector(".container").style.display = "none";
 document.querySelector(".starter").style.display = "grid";
 document.querySelector(".checkbox").style.display = "none";
-
-
 
 //making changes to new buttons
 newBtn.innerHTML = "Go Home";
@@ -71,15 +69,15 @@ function boxHighlighter() {
   if (!this.classList.contains("h") && flag === 1) {
     this.classList.add("h");
 
-
     window.optionSelected = Array.from(this.childNodes);
 
-    resultArray.push(window.optionSelected[3].textContent); 
+    resultArray.push(window.optionSelected[3].textContent);
 
     flag = 0;
     //num++;
     return;
   }
+
   if (this.classList.contains("h") && flag === 0) {
     this.classList.remove("h");
     flag = 1;
@@ -90,11 +88,10 @@ function boxHighlighter() {
 // lets make a showNext app engine
 
 function showNext() {
-  
-if(starter===1){
+  if (starter === 1) {
     var k = 0;
     var l = 0;
-document.querySelector(".starter").style.display = "none";
+    document.querySelector(".starter").style.display = "none";
 
     document.querySelector(".checkbox").style.display = "grid";
     qOne.innerHTML = json[0].question;
@@ -107,18 +104,15 @@ document.querySelector(".starter").style.display = "none";
       p.innerHTML = json[0].options[l].option;
       l++;
     });
-  
-  qNumber.innerHTML = 1;
-  starter++;
-  number=2;
-return;
 
-
-}
-if (number ===json.length+1) {
-
-  checkResult();
-  document.querySelector(".starter").style.display = "none";
+    qNumber.innerHTML = 1;
+    starter++;
+    number = 2;
+    return;
+  }
+  if (number === json.length + 1) {
+    checkResult();
+    document.querySelector(".starter").style.display = "none";
 
     question.innerHTML = "Over!!!";
     button.innerHTML = "";
@@ -132,8 +126,6 @@ if (number ===json.length+1) {
 
     //after question completion go home
     function goHome() {
-      
-
       location.reload();
     }
 
@@ -152,7 +144,6 @@ if (number ===json.length+1) {
         document.getElementById("myDiv").style.display = "grid";
         document.getElementById("h").innerHTML = window.result;
         //console.log("page result:" , window.result);
-
       }
     }
   } else {
@@ -174,31 +165,25 @@ if (number ===json.length+1) {
       p.innerHTML = json[number - 1].options[i].option;
       i++;
     });
-  
 
-  number++;
-  checkResult();
-
-}
+    number++;
+    checkResult();
+  }
 }
 //check result()
 
 function checkResult() {
-  var q=resultArray.pop();
-  var r=json[number2 - 1].correctOption;
+  var q = resultArray.pop();
+  var r = json[number2 - 1].correctOption;
 
-
-  if (  q===r){
+  if (q === r) {
     res++;
-  console.log("INNER result:" ,res);
+    console.log("INNER result:", res);
   }
 
+  window.result = res;
 
-  window.result=res;
-
-  console.log("OUTER result:" ,window.result);
-
-
+  console.log("OUTER result:", window.result);
 
   number2++;
   return;
