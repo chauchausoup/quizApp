@@ -9,12 +9,18 @@
   </head>
 
   <body>
+
+    <!-- overall container -->
+
     <div class="container">
+
+      <!-- number and question -->
       <div class="question">
         <span class="qNumber"></span>
         <p class="qOne"></p>
       </div>
 
+      <!-- options place  -->
       <ul class="checkbox">
         <li class="checkBox1 cb">
           <span class="pNO"></span>.<span class="sNo"></span>
@@ -37,20 +43,36 @@
           <span class="optionValue cb5"></span>
         </li>
       </ul>
+
+      <!--button place -->
       <div class="button">
         <input type="button" value="Next" />
       </div>
     </div>
 
+    
+    <!-- animation loader -->
     <div style="display: none;" id="loader"></div>
 
+    <!--home page  -->
+    <div style="display: none;" id="homepage" class="starter">
+      <h2 id="h2" style="font-size: 55;">Lets Start our Quiz</h2>
+      <p>Click below to play.</p>
+      <button onclick="homepage()">Start</button>
+    </div>
+
+    <!-- shows result -->
     <div style="display: none;" id="myDiv" class="animate-bottom">
-      <h2 id="h2" style="font-size: 25;"></h2>
+      <h2 id="h" style="font-size: 55;"></h2>
       <p>Click below to play again!</p>
       <button onclick="go()">Go Home</button>
     </div>
 
-    <script src="app.js"/>
+
+
+    <!-- script refrencing section -->
+    
+     <script src="app.js"/>
 
    
   </body>
