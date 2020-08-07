@@ -1,0 +1,37 @@
+package:::
+
+{
+
+question
+options   {
+	a1,a2,a3,a4,a5 
+	  }
+correct option  a2
+
+
+},
+
+{
+
+question
+options   {
+	a1,a2,a3,a4,a5 
+	  }
+correct option  a2
+
+
+}
+
+THIS IS THE PACKAGE INFO ...
+shuffling the package in loading
+
+number will  progess on loading...
+
+
+next button::: number changing
+
+..
+
+making a single question rendering from JSON 
+
+
