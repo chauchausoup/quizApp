@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CheckBox</title>
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style.css" />
+
+   
   </head>
 
   <body>
+     
 
     <!-- overall container -->
 
@@ -68,11 +71,339 @@
       <button onclick="go()">Go Home</button>
     </div>
 
-
-
-    <!-- script refrencing section -->
+<!-- script refrencing section -->
     
-     <script src="./app.js"/>
+<script >
+  // lets start with this sample JSON data
+
+// fetch("./data.json")
+//   .then((response) => response.json())
+//   .then((data) => (json = data));
+
+//lets select some queries
+
+[
+  {
+    "question": "What is the color of Sky?",
+    "options": [
+      {
+        "number": "1",
+        "option": "Sky Blue"
+      },
+      {
+        "number": "2",
+        "option": "Blue"
+      },
+      {
+        "number": "3",
+        "option": "Ocean Reflected Bue"
+      },
+      {
+        "number": "4",
+        "option": "Sky has no color "
+      },
+      {
+        "number": "5",
+        "option": "Black"
+      }
+    ],
+    "correctOption": "1"
+  },
+  {
+    "question": "Where is your Home?",
+    "options": [
+      {
+        "number": "1",
+        "option": "Earth"
+      },
+      {
+        "number": "2",
+        "option": "Universe"
+      },
+      {
+        "number": "3",
+        "option": "Where I am right now"
+      },
+      {
+        "number": "4",
+        "option": "Somewhere"
+      },
+      {
+        "number": "5",
+        "option": "No idea what you are talking about"
+      }
+    ],
+    "correctOption": "4"
+  },
+  {
+    "question": "How are you?",
+    "options": [
+      {
+        "number": "1",
+        "option": "Good"
+      },
+      {
+        "number": "2",
+        "option": "Fine"
+      },
+      {
+        "number": "3",
+        "option": "Awesome"
+      },
+      {
+        "number": "4",
+        "option": "Yeee, whatever"
+      },
+      {
+        "number": "5",
+        "option": "Shut up "
+      }
+    ],
+    "correctOption": "3"
+  },
+  {
+    "question": "Where is the headquater of Amazon?",
+    "options": [
+      {
+        "number": "1",
+        "option": "USA"
+      },
+      {
+        "number": "2",
+        "option": "India"
+      },
+      {
+        "number": "3",
+        "option": "China"
+      },
+      {
+        "number": "4",
+        "option": "Nepal"
+      },
+      {
+        "number": "5",
+        "option": "Let me google first."
+      }
+    ],
+    "correctOption": "5"
+  },
+  {
+    "question": "Can I change HTML element which is under parent component from child component in React?",
+    "options": [
+      {
+        "number": "1",
+        "option": "Yes need to add Ref in React"
+      },
+      {
+        "number": "2",
+        "option": "No it is not possible "
+      },
+      {
+        "number": "3",
+        "option": "I tried it once and ended up installing a Plugin to do that work"
+      },
+      {
+        "number": "4",
+        "option": "May be let be try with a test project"
+      },
+      {
+        "number": "5",
+        "option": "Stack overflow, I need your help."
+      }
+    ],
+    "correctOption": "5"
+  }
+]
+
+;
+
+var box = document.querySelectorAll(".cb");
+var optionValue = document.querySelectorAll(".optionValue");
+var pNo = document.querySelectorAll(".pNO");
+var sNo = document.querySelectorAll(".sNo");
+
+var next = document.querySelector('.button input[type="button"]');
+var qNumber = document.querySelector(".qNumber");
+var qOne = document.querySelector(".qOne");
+var question = document.querySelector(".question");
+var button = document.querySelector(".button");
+
+var span = document.getElementsByTagName("span");
+
+//creating some buttons on need
+
+var newBtn = document.createElement("BUTTON");
+var newResultBtn = document.createElement("BUTTON");
+//var homeBtn = document.createElement("BUTTON");
+
+//some counters and flags
+
+var number = 2;
+var number2 = 1;
+var starter = 1;
+var flag = 1;
+var res = 0;
+var resultArray = [];
+var optionSelected;
+
+//at very first of loading
+document.querySelector(".container").style.display = "none";
+document.querySelector(".starter").style.display = "grid";
+document.querySelector(".checkbox").style.display = "none";
+
+//making changes to new buttons
+newBtn.innerHTML = "Go Home";
+newResultBtn.innerHTML = "Show Result";
+//button.innerHTML = "";
+//homeBtn.innerHTML = "Go";
+//button.append(homeBtn);
+
+box.forEach((b) => b.addEventListener("click", boxHighlighter));
+next.addEventListener("click", showNext);
+//homeBtn.addEventListener("click",showNext);
+
+//home page button function
+function homepage() {
+  document.querySelector(".container").style.display = "grid";
+  showNext();
+}
+
+//goes home on showing result
+
+function go() {
+  location.reload();
+}
+
+//highlights the single box when selected
+
+function boxHighlighter() {
+  if (!this.classList.contains("h") && flag === 1) {
+    this.classList.add("h");
+
+    window.optionSelected = Array.from(this.childNodes);
+
+    resultArray.push(window.optionSelected[3].textContent);
+
+    flag = 0;
+    //num++;
+    return;
+  }
+
+  if (this.classList.contains("h") && flag === 0) {
+    this.classList.remove("h");
+    flag = 1;
+    return;
+  }
+}
+
+// lets make a showNext app engine
+
+function showNext() {
+  if (starter === 1) {
+    var k = 0;
+    var l = 0;
+    document.querySelector(".starter").style.display = "none";
+
+    document.querySelector(".checkbox").style.display = "grid";
+    qOne.innerHTML = json[0].question;
+    pNo.forEach((p) => (p.innerHTML = 1));
+    sNo.forEach((p) => {
+      p.innerHTML = json[0].options[k].number;
+      k++;
+    });
+    optionValue.forEach((p) => {
+      p.innerHTML = json[0].options[l].option;
+      l++;
+    });
+
+    qNumber.innerHTML = 1;
+    starter++;
+    number = 2;
+    return;
+  }
+  if (number === json.length + 1) {
+    checkResult();
+    document.querySelector(".starter").style.display = "none";
+
+    question.innerHTML = "Over!!!";
+    button.innerHTML = "";
+    document.querySelector(".checkbox").style.display = "none";
+
+    button.append(newBtn);
+    newBtn.addEventListener("click", goHome);
+
+    button.append(newResultBtn);
+    newResultBtn.addEventListener("click", showResult);
+
+    //after question completion go home
+    function goHome() {
+      location.reload();
+    }
+
+    // what happens after i click show result button?
+
+    function showResult() {
+      var myVar = setTimeout(showLoader, 0);
+      var myVar2 = setTimeout(showNum, 5000);
+
+      function showLoader() {
+        document.querySelector(".container").style.display = "none";
+        document.getElementById("loader").style.display = "grid";
+      }
+      function showNum() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "grid";
+        document.getElementById("h").innerHTML = window.result;
+        //console.log("page result:" , window.result);
+      }
+    }
+  } else {
+    var i = 0;
+    var j = 0;
+    // document.querySelector(".checkbox").style.display = "none";
+
+    document.querySelector(".checkbox").style.display = "grid";
+
+    qNumber.innerHTML = number;
+
+    qOne.innerHTML = json[number - 1].question;
+    pNo.forEach((p) => (p.innerHTML = number));
+    sNo.forEach((p) => {
+      p.innerHTML = json[number - 1].options[j].number;
+      j++;
+    });
+    optionValue.forEach((p) => {
+      p.innerHTML = json[number - 1].options[i].option;
+      i++;
+    });
+
+    number++;
+    checkResult();
+  }
+}
+//check result()
+
+function checkResult() {
+  var q = resultArray.pop();
+  var r = json[number2 - 1].correctOption;
+
+  if (q === r) {
+    res++;
+    console.log("INNER result:", res);
+  }
+
+  window.result = res;
+
+  console.log("OUTER result:", window.result);
+
+  number2++;
+  return;
+}
+
+//start the show
+
+</script>
+
 
    
   </body>

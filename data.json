@@ -1,26 +1,26 @@
 [
   {
-    "question": "What is your name?",
+    "question": "What is the color of Sky?",
     "options": [
       {
         "number": "1",
-        "option": "Krishna"
+        "option": "Sky Blue"
       },
       {
         "number": "2",
-        "option": "Nanda"
+        "option": "Blue"
       },
       {
         "number": "3",
-        "option": "Shesh"
+        "option": "Ocean Reflected Bue"
       },
       {
         "number": "4",
-        "option": "Tulsi"
+        "option": "Sky has no color "
       },
       {
         "number": "5",
-        "option": "Puspha"
+        "option": "Black"
       }
     ],
     "correctOption": "1"
@@ -30,29 +30,29 @@
     "options": [
       {
         "number": "1",
-        "option": "Pokhara"
+        "option": "Earth"
       },
       {
         "number": "2",
-        "option": "Europe"
+        "option": "Universe"
       },
       {
         "number": "3",
-        "option": "Asia"
+        "option": "Where I am right now"
       },
       {
         "number": "4",
-        "option": "World"
+        "option": "Somewhere"
       },
       {
         "number": "5",
-        "option": "Universe"
+        "option": "No idea what you are talking about"
       }
     ],
     "correctOption": "4"
   },
   {
-    "question": "How?",
+    "question": "How are you?",
     "options": [
       {
         "number": "1",
@@ -60,71 +60,71 @@
       },
       {
         "number": "2",
-        "option": "Nood"
+        "option": "Fine"
       },
       {
         "number": "3",
-        "option": "Put"
+        "option": "Awesome"
       },
       {
         "number": "4",
-        "option": "Yeah"
+        "option": "Yeee, whatever"
       },
       {
         "number": "5",
-        "option": "see"
+        "option": "Shut up "
       }
     ],
     "correctOption": "3"
   },
   {
-    "question": "Where is ?",
+    "question": "Where is the headquater of Amazon?",
     "options": [
       {
         "number": "1",
-        "option": "Pok"
+        "option": "USA"
       },
       {
         "number": "2",
-        "option": "Eur"
+        "option": "India"
       },
       {
         "number": "3",
-        "option": "As"
+        "option": "China"
       },
       {
         "number": "4",
-        "option": "Wor"
+        "option": "Nepal"
       },
       {
         "number": "5",
-        "option": "Uni"
+        "option": "Let me google first."
       }
     ],
     "correctOption": "5"
   },
   {
-    "question": "Where 5?",
+    "question": "Can I change HTML element which is under parent component from child component in React?",
     "options": [
       {
         "number": "1",
-        "option": "k"
+        "option": "Yes need to add Ref in React"
       },
       {
         "number": "2",
-        "option": "ur"
+        "option": "No it is not possible "
       },
       {
         "number": "3",
-        "option": "As"
+        "option": "I tried it once and ended up installing a Plugin to do that work"
       },
       {
         "number": "4",
-        "option": "Wr"
+        "option": "May be let be try with a test project"
       },
       {
         "number": "5",
-        "option": "Uni"
+        "option": "Stack overflow, I need your help."
       }
     ],
     "correctOption": "5"
