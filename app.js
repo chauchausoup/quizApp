@@ -1,8 +1,9 @@
 // lets start with this sample JSON data
 
-fetch("./data.json")
+ fetch("./data.json")
   .then((response) => response.json())
   .then((data) => (json = data));
+ 
 
 //lets select some queries
 
